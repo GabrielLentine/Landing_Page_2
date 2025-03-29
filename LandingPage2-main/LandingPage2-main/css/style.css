@@ -1,0 +1,260 @@
+/* importando algumas fontes para o projeto */
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teko:wght@600&display=swap");
+
+/* setando algumas configurações globais e resetando algumas informações */
+* {
+  margin: 0; /* sem margem */
+  padding: 0; /* sem espaçamento interno */
+  box-sizing: border-box; /* para preservar a largura das bordas */
+}
+body {
+  background: #1f1517;
+  color: white;
+}
+html {
+  font-family: Inter, sans-serif; /* definindo a fonte padrão do projeto */
+  font-weight: 500; /* definindo a "força" da fonte padrão do projeto */
+}
+a {
+  text-decoration: none !important; /* tirando a decoração do link */
+}
+ul {
+  list-style: none; /* tirando a decoração da lista */
+}
+
+/* estilizando o header */
+nav {
+  max-width: 1120px; /* largura máxima de 1120px */
+  margin: auto; /* centralizando a barra de navegação */
+  padding: 24px 160px; /* 24px para os paddings verticais (em cima e embaixo) e 160px para os paddings horizontais (esquerda e direita) */
+
+  /* flexbox */
+  display: flex; /* tudo ficará lado a lado */
+  flex-direction: row; /* os itens serão organizados em linhas, da esquerda para a direita */
+  justify-content: space-between; /* separando os três elementos (logo, links e github) */
+  align-items: center; /* centralizando os elementos */
+}
+#logo {
+  font-family: Teko; /* fonte da logo (importada acima) */
+  font-size: 32px; /* tamanho da fonte */
+  font-weight: 600;
+  text-transform: uppercase; /* transformando todas as letras mínusculas em maiusculas */
+}
+#menu {
+  color: #fff2e780;
+  display: flex; /* tudo ficará lado a lado */
+  gap: 24px; /* gap: propriedade do flexbox (espaçando os links em 24px */
+  text-transform: uppercase;
+}
+#github {
+  color: #fff2e7;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* estilizando o main */
+main {
+  display: flex;
+  flex-direction: column; /* tudo ficará em coluna */
+}
+#hero-main {
+  background: #181012;
+}
+#hero {
+  background: #181012;
+  max-width: 1120px;
+  height: 60vh; /* algo em torno de 60% do viewer do navegador */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 96px; /* espaçando os textos das imagens */
+  padding: 0 32px; /* sem espaçamento na vertical e 32px de espaçamento na horizontal */
+  margin: auto;
+  overflow: clip; /* vai garantir que as imagens não fiquem acessíveis por rolagem */
+}
+#hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.global-highlights {
+  font-family: Epilogue;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.brown {
+  color: #a45a49;
+}
+.yellow {
+  color: #e7a80e;
+}
+.gray {
+  color: #757575;
+}
+h1 {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-style: normal; /* fonte padrão (sem design) */
+  font-weight: 800;
+  line-height: 67.2px; /* altura da linha de 67.2px (ou 120$) */
+}
+hr {
+  width: 240px;
+  height: 2px;
+  border-color: #a45a49;
+}
+.hero-subtitle {
+  color: #665454;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+#hero-img-containers {
+  max-width: 45%;
+  column-count: 4; /* as imagens ficarão agrupadas em grupos de 4 cada */
+  column-gap: 16px;
+  margin: -16px;
+}
+/* dentro da div "hero-img-containers" há as imagens (que estão dentro do <img>, que por sua vez está dentro do <figure>) e é isso que essa sintaxe significa: eu quero as imagens que estão dentro de <img>, que está dentro do <figure>, que está dentro da <div hero-img-containers>  */
+#hero-img-containers > figure > img {
+  width: 100%;
+  border-radius: 8px;
+}
+#btn-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: auto;
+  transform: translate("0, -50%"); /* */
+}
+button {
+  border: none;
+  border-radius: 8px;
+  background: #a45a49;
+  padding: 16px;
+  margin-top: -32px;
+  margin-left: 64px;
+}
+#coffee-recipes {
+  display: flex;
+  flex-direction: column;
+  max-width: 1120px;
+  width: 100%;
+  padding: 48px 32px; /* 48px na vertical e 32px na horizontal */
+  margin: auto;
+}
+#coffee-recipes-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#coffee-recipes-title {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff2e7;
+}
+#coffee-recipes-subtitle {
+  color: #c7bab3;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+}
+#recipes-card-container {
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* duas colunas */
+  flex-direction: row;
+  flex-wrap: wrap; /* quando chegar no final do card, ele vai quebrar e ir para a próxima linha */
+  justify-content: center;
+  gap: 2px 32px;
+}
+.recipes-card {
+  background: #241a1c;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1120px;
+  width: 100%;
+  flex-basis: 464px; /* tamanho inicial */
+  margin-top: 32px;
+}
+.recipes-card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+}
+.recipes-card-header-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.recipes-card-title {
+  color: #fff2e7;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.recipes-stars {
+  color: #756a67;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.recipes-description {
+  color: #c7bab3;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 16px;
+}
+.recipes-author-photo {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: row; /* a foto e o nome estarão na mesma linha */
+  align-items: center;
+  gap: 8px;
+}
+.recipes-author-photo > img {
+  border-radius: 999px;
+  width: 48px;
+}
+.recipes-author-name {
+  color: #c7bab3;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* estilizando o footer */
+footer {
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: #23181a;
+}
+#footer-copy {
+  color: #fff2e7;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+#footer-author {
+  color: rgba(255, 242, 231, 0.5);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
